@@ -181,7 +181,6 @@ void Update() {
 
     // Snake Input
     auto snakeQ = ecs.query<GridDirection, SnakeProp>();
-
     snakeQ.each([](GridDirection& dir, SnakeProp& SnakeProp) {
         if (IsKeyPressed(KEY_UP) && abs(dir.y) != 1) {
             dir.y = -1;
@@ -207,7 +206,6 @@ void Update() {
 
     // Apple Spawn
     auto appleQ = ecs.query<const GridPosition, const Apple>();
-    
     if (appleQ.count() < applesInGame) {
         while (true) {
             bool appleAtPositionAlready = false;
